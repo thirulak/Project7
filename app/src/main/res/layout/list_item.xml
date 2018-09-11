@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/ListItem"
+        tools:text="Title:" />
+
+    <TextView
+        android:id="@+id/articleAuthor"
+        style="@style/ListItem"
+        tools:text="Author:" />
+
+    <TextView
+        android:id="@+id/Section"
+        style="@style/ListItem"
+        tools:text="Section:" />
+
+    <TextView
+        android:id="@+id/date"
+        style="@style/ListItem" />
+
+    <View style="@style/Divider" />
+
+</LinearLayout>

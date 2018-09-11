@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Divider">
+
+        <!-- Taken from SO: https://stackoverflow.com/questions/5049852/android-drawing-separator-divider-line-in-layout -->
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <style name="ListItem">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/holo_purple</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+</resources>
