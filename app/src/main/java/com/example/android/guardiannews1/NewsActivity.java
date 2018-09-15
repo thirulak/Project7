@@ -24,9 +24,8 @@ import java.util.List;
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<NewsClass>> {
 
     // URL for article data from The Guardian
-    private static final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?section=sport&from-date=2018-01-01&to-date=2018-12-31&show-tags=contributor&order-by=newest&q=Sport&api-key=";
-    private static final String apiKey = BuildConfig.THE_GUARDIAN_API_KEY;
+    private static final String GUARDIAN_REQUEST_URL ="https://content.guardianapis.com/search?q=";
+                private static final String apiKey = BuildConfig.THE_GUARDIAN_API_KEY;
     private static final String REQUEST_URL = GUARDIAN_REQUEST_URL + apiKey;
     private static final int NEWS_LOADER_ID = 1;
     LoaderManager loaderManager;
@@ -113,10 +112,12 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
         Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-        uriBuilder.appendQueryParameter("", category);
+        uriBuilder.appendQueryParameter("category", category);
         uriBuilder.appendQueryParameter("order-by", orderBy);
+        uriBuilder.appendQueryParameter("show-tags","contributor");
 
-        return new NewsLoader(this, REQUEST_URL);
+
+        return new NewsLoader(this, uriBuilder.toString().replace("&=",""));
     }
 
     @Override
