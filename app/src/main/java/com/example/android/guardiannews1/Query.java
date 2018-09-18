@@ -4,6 +4,7 @@ package com.example.android.guardiannews1;
  * Created by Meenakshi on 9/11/2018.
  */
 
+import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -80,9 +81,8 @@ public final class Query {
                 String articleAuthor;
                 if (tags.length() != 0) {
                     JSONObject tagsObject = tags.getJSONObject(0);
-                    articleAuthor = tagsObject.getString("webTitle");
-                } else articleAuthor = "No author, this is just a news";
-
+                    articleAuthor = tagsObject.getString(String.valueOf(R.string.WebTitle));
+                } else articleAuthor = tags.getString(R.string.no_author);
                 NewsClass newEntry = new NewsClass(articleTitle, section, articleAuthor, url, date);
                 newsList.add(newEntry);
             }
